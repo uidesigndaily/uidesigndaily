@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: blog
+  template:
+    metadata:
+      labels:
+        component: blog
+    spec:
+      volumes:
+        - name: ghost-content
+          persistentVolumeClaim:
+            claimName: blog-persistent-volume-claim
+      containers:
+        - name: blog
+          image: ghost:latest
+          ports:
+            - containerPort: 2368
+          volumeMounts:
+            - mountPath: /var/lib/ghost/content
+              name: ghost-content
+          env:
+            - name: url
+              value: 'https://blog.uidesigndaily.com'
+            - name: database__client
+              value: mysql
+            - name: database__connection__host
+              value: mysql-cluster-ip-service
+            - name: database__connection__user
+              value: root
+            - name: database__connection__password
+              valueFrom:
+                secretKeyRef:
+                  name: mysqlpassword
+                  key: MYSQL_PASSWORD
+            - name: database__connection__database
+              value: ghost

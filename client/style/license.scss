@@ -1,0 +1,106 @@
+@import "color-variables";
+
+.license-main-container {
+  width: 80%;
+  margin: auto;
+  padding: 0 25px;
+}
+
+.link-btn {
+  color: $default-color;
+  text-decoration: underline;
+}
+
+.license-header {
+  border-radius: 10px;
+  border: 1px solid $border-color;
+  padding: 35px;
+  margin: 90px auto 30px;
+
+  .license-icon {
+    margin: 0 35px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .license-header-content {
+    display: inline-block;
+    width: calc(100% - 130px);
+    vertical-align: middle;
+  }
+  a:link {
+    text-decoration: underline;
+  }
+
+  h1 {
+    margin-bottom: 5px;
+  }
+}
+
+.rules-section {
+
+  img, h2 {
+    margin-bottom: 15px;
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  &.okay {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 15px;
+  }
+
+  &.not-okay {
+    margin-bottom: 50px;
+  }
+
+}
+
+.more-info {
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 420px) {
+  .license-header {
+
+    .license-header-content {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+
+  .license-main-container {
+    width: 100%;
+  }
+
+  .license-header {
+    padding: 25px;
+
+    .license-icon {
+      margin: 0 35px 0 0;
+    }
+
+  }
+
+
+}
+
+@media only screen and (max-width: 700px) {
+
+ footer {
+   position: relative;
+ }
+
+}
+
+@media only screen and (min-width: 1400px) {
+  .license-main-container {
+    width: 50%;
+  }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="885px" height="196px" viewBox="0 0 885 196" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>inline-subscribe-banner-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="99.2074603%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#BA81FF" offset="0%"></stop>
+            <stop stop-color="#FF6A95" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="456" cy="456" r="456"></circle>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Main-Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Oval-Copy-4" transform="translate(-127.000000, -37.000000)">
+            <g id="inline-subscribe-banner-bg" transform="translate(100.000000, -368.000000)">
+                <g id="Group-23">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+                    <circle id="right-circle" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.429594494" mask="url(#mask-3)" transform="translate(810.824449, 624.824449) rotate(-27.000000) translate(-810.824449, -624.824449) " cx="810.824449" cy="624.824449" r="185"></circle>
+                    <path d="M172.403833,774.566754 C248.619128,774.566754 333.875175,710.272593 333.875175,634.057297 C333.875175,557.842002 256.69639,485.496068 180.481095,485.496068 C104.265799,485.496068 34.4038328,560.351458 34.4038328,636.566754 C34.4038328,712.782049 96.1885373,774.566754 172.403833,774.566754 Z" id="Oval-Copy-5" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.22" mask="url(#mask-3)" transform="translate(184.139504, 630.031411) rotate(20.000000) translate(-184.139504, -630.031411) "></path>
+                    <path d="M50.6722042,637.981385 C106.729106,637.981385 181.486959,610.983417 181.486959,554.926515 C181.486959,498.869613 120.6492,421.061292 64.5922978,421.061292 C8.53539568,421.061292 -58.4442821,488.040969 -58.4442821,544.097871 C-58.4442821,600.154774 -5.3846979,637.981385 50.6722042,637.981385 Z" id="Oval-Copy-6" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.09" mask="url(#mask-3)" transform="translate(61.521338, 529.521338) rotate(-225.000000) translate(-61.521338, -529.521338) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

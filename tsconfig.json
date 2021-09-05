@@ -1,0 +1,54 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": true,
+    	"declaration": false,
+    	"declarationMap": false,
+		"forceConsistentCasingInFileNames": true,
+		"newLine": "lf",
+    	"noEmit": false,
+    	"noEmitHelpers": false,
+    	"noEmitOnError": true,
+    	"noErrorTruncation": true,
+    	"noUnusedLocals": false,
+    	"noUnusedParameters": false,
+		"removeComments": true,
+		"sourceMap": true,
+		"strict": true,
+		"lib": [
+			"esnext",
+			"dom"
+		],
+		"module": "commonjs",
+		"target": "es2015",
+		"typeRoots": [
+			"./node_modules/@types"
+		],
+		"types": [
+			"async",
+			"body-parser",
+			"bson",
+			"compression",
+			"connect",
+			"cors",
+			"debug",
+			"dotenv",
+			"express",
+			"helmet",
+			"jwt-simple",
+			"mime",
+			"mongodb",
+			"mongoose",
+			"morgan",
+			"node",
+			"range-parser",
+			"serve-static"
+		],
+		"outDir": "./build"
+	},
+	"exclude": [
+		"node_modules"
+	],
+	"include": [
+		"src/**/*"
+	]
+}

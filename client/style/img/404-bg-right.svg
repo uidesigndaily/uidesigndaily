@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="418px" height="593px" viewBox="0 0 418 593" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>404-bg-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Main-Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="404" transform="translate(-1022.000000, 0.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="404-bg-right" transform="translate(914.000000, -272.000000)">
+                <circle id="right-circle" opacity="0.155994234" transform="translate(404.533358, 404.533358) rotate(-60.000000) translate(-404.533358, -404.533358) " cx="404.533358" cy="404.533358" r="296"></circle>
+                <circle id="right-circle-copy" opacity="0.0642438616" transform="translate(194.562344, 792.562344) rotate(-39.000000) translate(-194.562344, -792.562344) " cx="194.562344" cy="792.562344" r="71.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

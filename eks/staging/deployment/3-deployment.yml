@@ -1,0 +1,157 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: staging
+  name: uidd-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: uidd
+  template:
+    metadata:
+      labels:
+        component: uidd
+    spec:
+      volumes:
+        - name: uidd-storage
+          persistentVolumeClaim:
+            claimName: uidd-claim
+      containers:
+        - name: uidd
+          image: uidesigndaily/web:tagVersion
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: uidd-storage
+              mountPath: /usr/uidesigndaily/uploads
+              subPath: uploads
+          env:
+            - name: NODE_ENV
+              value: 'staging'
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongouri
+                  key: MONGO_URI
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwtsecret
+                  key: JWT_SECRET
+            - name: MAILCHIMP_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mailchimpkey
+                  key: MAILCHIMP_KEY
+            - name: UPLOADER_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: uploaderauth
+                  key: UPLOADER_AUTH
+            - name: GOOGLE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: googlesecret
+                  key: GOOGLE_SECRET
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: googleclientid
+                  key: GOOGLE_CLIENT_ID
+            - name: FACEBOOK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: facebooksecret
+                  key: FACEBOOK_SECRET
+            - name: FACEBOOK_APP_ID
+              valueFrom:
+                secretKeyRef:
+                  name: facebookappid
+                  key: FACEBOOK_APP_ID
+            - name: TWITTER_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: twittersecret
+                  key: TWITTER_SECRET
+            - name: TWITTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: twitterkey
+                  key: TWITTER_KEY
+            - name: MAILGUN_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mailgunkey
+                  key: MAILGUN_KEY
+            - name: MAILGUN_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: mailgundomain
+                  key: MAILGUN_DOMAIN
+            - name: ADMIN_FNAME
+              valueFrom:
+                secretKeyRef:
+                  name: adminfname
+                  key: ADMIN_FNAME
+            - name: ADMIN_LNAME
+              valueFrom:
+                secretKeyRef:
+                  name: adminlname
+                  key: ADMIN_LNAME
+            - name: ADMIN_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: adminemail
+                  key: ADMIN_EMAIL
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: adminpassword
+                  key: ADMIN_PASSWORD
+            - name: SLACK_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: slacktoken
+                  key: SLACK_TOKEN
+            - name: APM_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: apmtoken
+                  key: APM_TOKEN
+            - name: APM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: apmurl
+                  key: APM_URL
+            - name: ELASTICSEARCH_URI
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearchuri
+                  key: ELASTICSEARCH_URI
+            - name: ELASTICSEARCH_USER
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearchuser
+                  key: ELASTICSEARCH_USER
+            - name: ELASTICSEARCH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearchpassword
+                  key: ELASTICSEARCH_PASSWORD
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: staging
+  name: uidd-service
+spec:
+  type: ClusterIP
+  selector:
+    component: uidd
+  ports:
+    - port: 3000
+      targetPort: 3000

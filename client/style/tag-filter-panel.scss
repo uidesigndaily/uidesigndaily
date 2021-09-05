@@ -1,0 +1,160 @@
+
+@import "color-variables";
+
+
+
+.tag-filter-panel {
+  right: -120%;
+  height: 110%;
+  width: 450px;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 10;
+  box-shadow: -8px 9px 25px 0 rgba(132,128,177,0.28);
+  padding: 25px;
+
+  &.hidden {
+    right: -40%;
+  }
+
+  .info-text-grey {
+    margin-top: 5px;
+  }
+
+  .tag-filter-panel-header-text-wrapper {
+    width: calc(100% - 50px);
+    display: inline-block;
+  }
+
+  .close-btn {
+    float: right;
+    display: inline-block;
+  }
+
+  .selected-tags-counter {
+    clear: both;
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    background: $shape-bg-color;
+    margin-top: 30px;
+
+    &.active {
+
+      .tag-counter-label-empty {
+        display: none;
+        font-size: 20px;
+        color: $secondary-color;
+      }
+
+      .tag-counter-label {
+        display: inline-block;
+      }
+
+      .link-btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  .tag-counter-label-empty {
+    font-size: 20px;
+    color: $secondary-color;
+    display: inline-block;
+    width: calc(100% - 40px);
+  }
+
+  .tag-counter-label {
+    display: none;
+    font-size: 20px;
+    width: calc(100% - 40px);
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .link-btn {
+    float: right;
+    display: inline-block;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .tags-content-wrapper {
+    margin-top: 25px;
+    height: calc(100% - 300px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .tags-content {
+    margin-bottom: 15px
+  }
+
+
+  .grey {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .tag {
+    border-radius: 10px;
+    border: 1px solid $border-color;
+    padding: 7px 10px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: $secondary-color;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border: 1px solid $pink;
+      color: $default-color;
+
+    }
+
+    &.active {
+      background-color: $pink;
+      border: 1px solid $pink;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #ea64a2;
+
+      }
+    }
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1020px)  {
+  .tag-filter-panel {
+    width: 35%;
+
+    &.hidden {
+      right: -50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  .tag-filter-panel {
+    width: 100%;
+
+    &.hidden {
+      right: -105%;
+    }
+
+    .tags-content-wrapper {
+      height: calc(100vh - 210px);
+    }
+  }
+}

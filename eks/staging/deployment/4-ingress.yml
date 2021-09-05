@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: staging
+  name: ingress-service
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+spec:
+  rules:
+    - host: staging.uidesigndaily.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: uidd-service
+              servicePort: 3000

@@ -1,0 +1,657 @@
+@import "color-variables.scss";
+
+
+html {
+  height: initial;
+  overflow: visible;
+}
+
+body {
+  height: initial;
+  overflow: visible;
+  background: #fcfcff;
+}
+
+.landing-content-container {
+  height: calc(100vh - 100px);
+  position: relative;
+  min-height: 900px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.software-item {
+  width: 42px;
+  height: 42px;
+  background-color: #F7F7FC;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 42px;
+  font-size: 14px;
+  color: $secondary-color;
+  margin-left: 10px;
+  position: relative;
+
+  &::after {
+    content: "All software types";
+    background-color: $default-color;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 1px 14px 18px -15px #232e4c;
+    position: absolute;
+    bottom: 40px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 15px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  &.active {
+    border: 1px solid $pink;
+    background-color: #ffffff;
+    color: $default-color;
+      }
+
+  &:hover {
+    border: 1px solid $pink;
+    background-color: #ffffff;
+    color: $default-color;
+
+    &::after {
+      opacity: 1;
+      bottom: 45px;
+    }
+  }
+
+  &.sketch {
+    background-image: url("img/sketch-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::after {
+      content: "Sketch";
+    }
+
+    &:hover, &.active {
+      background-color: #ffffff;
+    }
+
+
+  }
+
+  &.photoshop {
+    background-image: url("img/photoshop-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::after {
+      content: "Photoshop";
+    }
+
+  }
+
+  &.principle {
+    background-image: url("img/principle-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+  }
+
+  &.figma {
+    background-image: url("img/figma-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::after {
+      content: "Figma";
+    }
+
+  }
+
+  &.xd {
+    background-image: url("img/adobe-xd-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::after {
+      content: "AdobeXD";
+    }
+
+  }
+
+  &.studio {
+    background-image: url("img/invision-studio-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::after {
+      content: "Studio";
+    }
+
+  }
+}
+
+.filter-section {
+  margin: 0 0 30px 25px;
+  text-align: center;
+  padding: 45px 25px 0 0;
+  overflow: hidden;
+
+  &.extra-margin {
+    margin: 95px 0 30px 25px;
+
+  }
+
+  .search-input-wrapper {
+    width: 280px;
+  }
+
+  .clear-search {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: none;
+  }
+
+  .search-input {
+    display: inline-block;
+  }
+
+}
+
+.primary-btn {
+  display: inline-block;
+  max-width: 150px;
+  position: relative;
+  margin-left: 1%;
+}
+
+.tag-number {
+  color: #ffffff;
+  background-color: $pink;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 25px;
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  padding: 5px 9px;
+  box-shadow: 0 2px 8px 0 rgba(247,117,193,0.50);
+  display: none;
+}
+
+.software-list {
+  display: inline-block;
+}
+
+.designs-section {
+  clear: both;
+  padding: 15px 25px 50px;
+  max-width: 1450px;
+  height: auto;
+  margin: 0 auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-flow: row dense;
+  grid-gap: 25px;
+
+  .design-thumbnail {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 20px 10px -15px rgba(197, 192, 249, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    height: auto;
+
+    &:hover {
+      box-shadow: 0 20px 20px -15px rgba(95, 83, 214, 0.2);
+      transform: scale(1.02);
+
+      .download-btn {
+        opacity: 1;
+        top: 30px;
+      }
+    }
+  }
+
+  .design-preview {
+    border-radius: 5px 5px 0 0;
+    height: 250px;
+    background-color: $accessory-color;
+    width: 100%;
+    position: relative;
+
+    img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+
+      height: 100%;
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .design-details {
+    background-color: #ffffff;
+    position: relative;
+    padding: 20px 15px;
+    border-radius: 0 0 5px 5px;
+    margin-top: -5px;
+
+    .software-item {
+      border: 1px solid $border-color;
+      position: absolute;
+      left: 0;
+      top: -22px;
+      font-size: 0;
+
+      &::after {
+        background-color: $default-color;
+        color: #ffffff;
+        font-size: 14px;
+        border-radius: 5px;
+        box-shadow: 1px 14px 18px -15px #232e4c;
+        position: absolute;
+        bottom: 40px;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 15px;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+
+        &::after {
+          opacity: 1;
+          bottom: 45px;
+        }
+      }
+
+      &.sketch {
+        background: url("img/sketch-logo.svg") no-repeat center #ffffff;
+
+        &::after {
+          content: "Sketch";
+        }
+
+      }
+
+      &.photoshop {
+        background: url("img/photoshop-logo.svg") no-repeat center #ffffff;
+
+        &::after {
+          content: "Photoshop";
+        }
+      }
+
+      &.principle {
+        background: url("img/principle-logo.svg") no-repeat center #ffffff;
+
+        &::after {
+          content: "Principle";
+        }
+      }
+
+      &.figma {
+        background: url("img/figma-logo.svg") no-repeat center #ffffff;
+
+        &::after {
+          content: "Figma";
+        }
+      }
+
+      &.xd {
+        background: url("img/adobe-xd-logo.svg") no-repeat center #ffffff;
+
+        &::after {
+          content: "AdobeXD";
+        }
+      }
+
+      &.studio {
+        background: url("img/invision-studio-logo.svg") no-repeat center #ffffff;
+
+        &::after {
+          content: "Studio";
+        }
+      }
+
+
+
+    }
+
+    .download-btn {
+      opacity: 0;
+      width: 100px;
+      display: inline-block;
+      position: absolute;
+      right: 15px;
+      top: 25px;
+    }
+  }
+
+
+
+  .design-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: $default-color;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 110px);
+
+    &.sup {
+      width: 100%;
+    }
+  }
+
+  .upload-date {
+    font-size: 14px;
+    color: $default-color;
+    opacity: 0.7;
+    text-align: left;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/** ==================================== Search Empty State ==================================== */
+
+#search-result-empty-state {
+  display: none;
+}
+
+.search-empty-state {
+  text-align: center;
+  max-width: 370px;
+  margin: 10vh auto 0;
+  padding: 0 20px;
+
+  .search-empty-icon {
+    margin-bottom: 25px;
+  }
+
+  .l-font-size {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+
+footer {
+  position: fixed;
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1500px) {
+  .designs-section {
+    max-width: 1200px;
+
+    .design-preview {
+      height: 275px;
+    }
+  }
+
+  .inline-subscribe-banner-main-container {
+    grid-column: span 3;
+  }
+
+  .sup-main-container {
+
+    &.large {
+      grid-column: span 3;
+
+    }
+
+  }
+}
+
+
+
+@media only screen and (max-width: 1250px) {
+  .designs-section {
+    max-width: 900px;
+
+    .design-preview {
+      height: 315px;
+    }
+  }
+
+  .inline-subscribe-banner-main-container {
+    grid-column: span 2;
+  }
+
+  .sup-main-container {
+
+    &.large {
+      grid-column: span 2;
+
+    }
+
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+
+  .designs-section {
+
+    .design-details {
+
+      .software-item {
+        padding: 0 22px 0 45px;
+        width: auto;
+        font-size: initial;
+        line-height: 40px;
+
+        &:hover {
+
+          &::after {
+            opacity: 0;
+          }
+        }
+
+        &.sketch {
+          background: url("img/sketch-logo.svg") no-repeat 15px center #ffffff;
+        }
+
+        &.photoshop {
+          background: url("img/photoshop-logo.svg") no-repeat 15px center #ffffff;
+        }
+
+        &.principle {
+          background: url("img/principle-logo.svg") no-repeat 15px center #ffffff;
+        }
+
+        &.figma {
+          background: url("img/figma-logo.svg") no-repeat 20px center #ffffff;
+        }
+
+        &.xd {
+          background: url("img/adobe-xd-logo.svg") no-repeat 15px center #ffffff;
+        }
+
+        &.studio {
+          background: url("img/invision-studio-logo.svg") no-repeat 15px center #ffffff;
+        }
+
+
+
+      }
+    }
+
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 890px) {
+
+  .filter-section {
+    margin: 15px 0 30px 25px;
+
+    &.extra-margin {
+      margin: 75px 0 30px 25px;
+    }
+  }
+
+  .software-list {
+    clear: both;
+    margin: 20px auto 0;
+    display: block;
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 700px) {
+
+  .filter-section {
+
+    .primary-btn {
+      border: 1px solid #7D7A9E;
+      color: #242E4C;
+    }
+  }
+
+  .designs-section {
+    padding: 0 25px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+    .design-thumbnail {
+      width: 100%;
+      margin: 0 0 15px;
+    }
+
+    .design-preview {
+      width: 100%;
+      height: auto;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-position: initial;
+        object-fit: initial;
+        border: 0;
+        position: relative;
+      }
+    }
+
+    .design-details {
+
+      .download-btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  .inline-subscribe-banner-main-container {
+    grid-column: span 1;
+  }
+
+  .sup-main-container {
+
+    &.large {
+      grid-column: span 1;
+      overflow: hidden;
+    }
+
+  }
+}
+
+
+@media only screen and (max-width: 530px) {
+
+ .filter-section {
+   padding: 25px 15px 0 0;
+
+   .search-input-wrapper {
+     width: calc(100% - 170px);
+   }
+ }
+
+  .designs-section {
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: initial;
+    grid-auto-flow: dense;
+    grid-gap: 25px;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 420px) {
+
+  .filter-section {
+    margin: 15px 0 30px 15px;
+
+    .search-input-wrapper {
+      width: 100%;
+    }
+
+    .primary-btn {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  .software-item {
+    margin: 0 0 0 15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

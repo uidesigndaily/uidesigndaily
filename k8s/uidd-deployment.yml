@@ -1,0 +1,127 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uidd-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: uuid
+  template:
+    metadata:
+      labels:
+        component: uuid
+    spec:
+      volumes:
+        - name: uidd-storage
+          persistentVolumeClaim:
+            claimName: uidd-persistent-volume-claim
+      containers:
+        - name: uuid
+          image: uidesigndaily/web:tagVersion
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: uidd-storage
+              mountPath: /usr/uidesigndaily/uploads
+              subPath: uploads
+          env:
+            - name: MONGO_URI
+              value: 'mongodb://mongo-cluster-ip-service:27017/uidesigndaily'
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwtsecret
+                  key: JWT_SECRET
+            - name: SUPPORT_EMAIL_ADDRESS
+              valueFrom:
+                secretKeyRef:
+                  name: supportemailaddress
+                  key: SUPPORT_EMAIL_ADDRESS
+            - name: SUPPORT_EMAIL_PW
+              valueFrom:
+                secretKeyRef:
+                  name: supportemailpw
+                  key: SUPPORT_EMAIL_PW
+            - name: MAILCHIMP_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mailchimpkey
+                  key: MAILCHIMP_KEY
+            - name: UPLOADER_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: uploaderauth
+                  key: UPLOADER_AUTH
+            - name: GOOGLE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: googlesecret
+                  key: GOOGLE_SECRET
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: googleclientid
+                  key: GOOGLE_CLIENT_ID
+            - name: FACEBOOK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: facebooksecret
+                  key: FACEBOOK_SECRET
+            - name: FACEBOOK_APP_ID
+              valueFrom:
+                secretKeyRef:
+                  name: facebookappid
+                  key: FACEBOOK_APP_ID
+            - name: TWITTER_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: twittersecret
+                  key: TWITTER_SECRET
+            - name: TWITTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: twitterkey
+                  key: TWITTER_KEY
+            - name: MAILGUN_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mailgunkey
+                  key: MAILGUN_KEY
+            - name: MAILGUN_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: mailgundomain
+                  key: MAILGUN_DOMAIN
+            - name: ADMIN_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: adminemail
+                  key: ADMIN_EMAIL
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: adminpassword
+                  key: ADMIN_PASSWORD
+            - name: SLACK_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: slacktoken
+                  key: SLACK_TOKEN
+            - name: APM_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: apmtoken
+                  key: APM_TOKEN
+            - name: APM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: apmurl
+                  key: APM_URL
+            - name: ELASTICSEARCH_URI
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearchuri
+                  key: ELASTICSEARCH_URI
+      imagePullSecrets:
+        - name: regcred

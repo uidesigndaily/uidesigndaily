@@ -1,0 +1,14 @@
+node_modules
+client
+client-react
+Dockerfile
+.env
+src
+tsconfig.json
+webpack.config.js
+uploads
+k8s
+jenkins
+README.md
+client.tsconfig.json
+eks

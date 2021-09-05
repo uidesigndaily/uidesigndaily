@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>snackbar-success-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="99.2074603%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#68E4BC" offset="0%"></stop>
+            <stop stop-color="#4AD0D1" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="11" cy="11" r="11"></circle>
+        <filter x="-84.1%" y="-29.5%" width="213.6%" height="168.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="5.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="12" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0528755993   0 0 0 0 0.706048044   0 0 0 0 0.687965995  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Post-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="selected-design-copy" transform="translate(-604.000000, -28.000000)" fill-rule="nonzero">
+            <g id="snackbar-success-icon" transform="translate(604.000000, 28.000000)">
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                </g>
+                <path d="M14.6557998,7.23543718 L8.95200046,13.0590683 L6.34420015,10.3965098 C6.03666647,10.0825829 5.53813673,10.0825829 5.23060305,10.3965098 C4.92313232,10.7105011 4.92313232,11.2194988 5.23060305,11.5334901 L8.39520186,14.7645387 C8.54896875,14.92147 8.7504846,15 8.95200046,15 C9.15351631,15 9.35503216,14.92147 9.50879905,14.7645387 L15.769397,8.37248174 C16.0768677,8.05849046 16.0768677,7.5494927 15.769397,7.2355015 C15.4618633,6.92151022 14.9632706,6.92151022 14.6557998,7.23543718 Z" id="Path" stroke="#FFFFFF" stroke-width="0.846153849" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,110 @@
+
+
+<img class="white-logo" src="../style/img/UIDesignDaily-logo-white.svg" alt="UI Design Daily white logo">
+
+<h1>Upload Files</h1>
+
+
+
+<form id="uploadform" action="/api/v1/posts" enctype="multipart/form-data" method="post">
+
+    <div class="column-wrapper">
+
+        <div class="column">
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Day</p>
+
+                <input class="dark-input" type="number" name="day" placeholder="Enter day">
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Title</p>
+
+                <input class="dark-input" type="text" name="title" placeholder="Enter design title">
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Description</p>
+
+                <textarea class="dark-input" rows="4" name="description" placeholder="Enter design description"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="column right">
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Tags</p>
+
+                <input class="dark-input" type="text" name="tags" placeholder="Enter tags comma separated">
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Date</p>
+
+                <input class="dark-input date" type="date" name="date" placeholder="Enter design title">
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Software</p>
+
+                <select class="dark-input" name="software" form="uploadform">
+
+                    <option value="sketch">Sketch</option>
+
+                    <option value="photoshop">Photoshop</option>
+
+                    <option value="principle">Principle</option>
+
+                    <option value="figma">Figma</option>
+
+                    <option value="xd">XD</option>
+
+                    <option value="studio">Studio</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Thumbnail Image</p>
+
+                <input class="dark-input" type="file" name="image">
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <p class="input-label">Source File</p>
+
+                <input class="dark-input" type="file" name="source">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <input class="upload-submit-btn active" type="submit" value="Submit">
+
+</form>

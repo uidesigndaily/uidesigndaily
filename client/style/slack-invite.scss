@@ -1,0 +1,160 @@
+
+
+header {
+  position: relative;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+#slack-invite-container {
+  display: block;
+}
+
+#slack-invite-success-container {
+  display: none;
+}
+
+#slack-invite-failure-container {
+  display: none;
+
+}
+
+.slack-invite-container {
+  max-width: 550px;
+  padding: 0 20px;
+  margin: auto;
+  min-height: 650px;
+
+  img {
+    margin: 100px auto 40px;
+    display: block;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 35px;
+    text-align: center;
+    line-height: 26px;
+  }
+
+  .input-container {
+    padding: 0 25px;
+    width: 100%;
+  }
+
+  .input-wrapper{
+    width: 68%;
+    display: inline-block;
+
+    .border-input {
+      padding: 20px;
+    }
+
+    .input-error-msg {
+      transition: 0.2s opacity ease;
+      text-align: left;
+      opacity: 0;
+    }
+  }
+
+  .slack-btn {
+    width: 30%;
+    display: inline-block;
+    padding: 20px;
+    background-color: #612069;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius: 5px;
+    float: right;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #810c8e;
+    }
+  }
+
+
+}
+
+.slack-invite-success-container, .slack-invite-failure-container {
+  max-width: 550px;
+  padding: 0 20px;
+  margin: auto;
+  min-height: 540px;
+  text-align: center;
+
+  img {
+    margin: 80px auto 30px;
+    display: block;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  .m-font-size {
+    max-width: 380px;
+    margin: auto;
+  }
+
+  .pink-btn {
+    display: block;
+    max-width: 180px;
+    margin: 30px auto;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+
+  footer {
+    position: relative;
+  }
+
+}
+
+
+@media only screen and (max-width: 580px) {
+
+  .slack-invite-container {
+
+    img {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      padding: 0;
+    }
+
+    .input-wrapper {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .input-error-msg {
+      margin-bottom: 0;
+    }
+
+    .slack-btn {
+      width: 100%;
+      float: none;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 530px) {
+
+  .slack-invite-container {
+    padding: 0 20px 80px;
+  }
+
+}

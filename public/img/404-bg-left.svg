@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="374px" height="335px" viewBox="0 0 374 335" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>404-bg-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Main-Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.22">
+        <g id="404" transform="translate(0.000000, -622.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M60.5174276,1039.3981 C-51.0372851,999.913778 -108.507714,879.835898 -67.8463681,771.196647 C-27.1850223,662.557397 115.006285,592.049487 226.560998,631.533807 C338.11571,671.018128 412.483645,814.125359 371.822299,922.764609 C331.160953,1031.40386 172.07214,1078.88242 60.5174276,1039.3981 Z" id="404-bg-left" transform="translate(151.085776, 836.804116) rotate(383.000000) translate(-151.085776, -836.804116) "></path>
+        </g>
+    </g>
+</svg>

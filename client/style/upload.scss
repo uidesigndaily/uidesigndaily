@@ -1,0 +1,100 @@
+@import "color-variables";
+
+
+#main-container {
+  background-color: $default-color;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+.white-logo {
+  margin: 55px auto 45px;
+  display: block;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.column-wrapper {
+  max-width: 760px;
+  margin: auto;
+}
+
+.column {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+
+  &.right {
+    float: right;
+  }
+}
+
+.input-label {
+  color: $accessory-color;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+
+.input-wrapper {
+  margin-bottom: 15px;
+}
+
+.dark-input {
+  border: 1px solid #171F38;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: transparent;
+  color: #ffffff;
+  width: 100%;
+  transition: border 0.3s ease-in-out;
+
+  &:hover {
+    border: 1px solid rgba(247, 117, 193, 0.5);
+  }
+
+  &:focus {
+    border: 1px solid $pink;
+  }
+
+  &::placeholder {
+    color: #97A5CE;
+  }
+
+  &.date {
+    padding: 13px 15px;
+  }
+}
+
+select {
+  height: 52px;
+}
+
+.upload-submit-btn {
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  text-align: center;
+  color: $grey-color;
+  font-size: 24px;
+  bottom: 0;
+  background-color: #1C2540;
+  cursor: not-allowed;
+
+  &.active {
+    background: linear-gradient(90deg, #F073C8 0%, #FF6A95 99%);
+    background-size: 200% auto;
+    transition: all 0.3s ease-in-out;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      background-position: right center;
+    }
+  }
+}

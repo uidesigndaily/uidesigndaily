@@ -18,7 +18,7 @@ The `main` branch contains the code currently running in production. This is the
 
 The code in the `main` branch can be considered legacy going forward, as it would be too much hassle to do a gradual migration to the desired stack, while also developing the new features that we're aiming for.
 
-**The `develop` branch contains the code for the new platform.**
+**The `platform` branch contains the code for the new platform.**
 
 ### Tech Stack for the New Platform
 
